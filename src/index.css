@@ -4,11 +4,30 @@
 @tailwind utilities;
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 .home-bg-desktop {
   background-image: url('/assets/home/background-home-desktop.jpg');
   background-size: cover;
   background-position: center;
+}
+.destination-bg-desktop {
+  background-image: url('/assets/destination/background-destination-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.crew-bg-desktop {
+  background-image: url('/assets/crew/background-crew-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.technology-bg-desktop {
+  background-image: url('/assets/technology/background-technology-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.active{
+  border-bottom: 4px solid white;
 }

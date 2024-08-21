@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Main() {
   return (
     <main>
@@ -16,8 +18,8 @@ export default function Main() {
         </div>
         <article>
           {/* TRANSPARENT DIV THAT OVERLAYS UPON HOVERING*/}
-          {/* <div className="rounded-full bg-white h-[43rem] w-[43rem] opacity-100 z-10 transition-all duration-150 hover:opacity-20"></div>
-          <div className="rounded-full absolute top-[34rem] ml-[8rem]">
+          {/* <div className="rounded-full bg-red-950 h-[43rem] w-[43rem] opacity-100 z-10 transition-all duration-150 hover:opacity-20"></div>
+          <div className="rounded-full absolute top-[34rem] ml-[8rem] -z-10">
             <img
               className="rounded-full"
               src="/assets/home/explore.png"
@@ -25,8 +27,9 @@ export default function Main() {
             />
           </div> */}
 
+          <Link to='/destination'>   
           <div className="relative">
-            <div className="rounded-full ml-[-7rem] mt-[-5rem] bg-white h-[45rem] w-[45rem] opacity-0 z-10 transition-all duration-150 hover:opacity-20 absolute inset-0"></div>
+            <div className="rounded-full ml-[-7rem] mt-[-5rem] bg-white h-[45rem] w-[45rem] opacity-0 z-10 ease-in-out duration-500 hover:opacity-20 absolute inset-0"></div>
             <div className="rounded-full relative ml-[2rem] pt-[3.8rem]">
               <img
                 className="rounded-full"
@@ -35,6 +38,7 @@ export default function Main() {
               />
             </div>
           </div>
+          </Link>
         </article>
       </section>
     </main>

@@ -6,10 +6,10 @@ export default function Navbar() {
     <nav className="pt-[4rem] flex items-center justify-between -z-10">
       <Logo />
       <ul className="text-white flex bg-nav-bg-color backdrop-blur-[4rem] gap-[4.8rem] py-0 px-[6.4rem] justify-end">
-        <li className="py-[4.8rem]">
+        <li className="">
           <NavLink
-            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px]"
-            to=""
+            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px] py-[4.8rem]"
+            to="/"
           >
             <strong className="text-[1.6rem] font-bold tracking-[2.7px]">
               00
@@ -17,10 +17,10 @@ export default function Navbar() {
             HOME
           </NavLink>
         </li>
-        <li className="py-[4.8rem]">
+        <li className="">
           <NavLink
-            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px]"
-            to=""
+            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px] py-[4.8rem]"
+            to="/destination"
           >
             <strong className="text-[1.6rem] font-bold tracking-[2.7px]">
               01
@@ -28,10 +28,10 @@ export default function Navbar() {
             DESTINATION
           </NavLink>
         </li>
-        <li className="py-[4.8rem]">
+        <li className="">
           <NavLink
-            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px]"
-            to=""
+            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px] py-[4.8rem]"
+            to="/crew"
           >
             <strong className="text-[1.6rem] font-bold tracking-[2.7px]">
               02
@@ -39,10 +39,10 @@ export default function Navbar() {
             CREW
           </NavLink>
         </li>
-        <li className="py-[4.8rem]">
+        <li className="">
           <NavLink
-            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px]"
-            to=""
+            className="flex gap-[.8rem] text-[1.6rem] tracking-[2px] py-[4.8rem]"
+            to="/technology"
           >
             <strong className="text-[1.6rem] font-bold tracking-[2.7px]">
               03
