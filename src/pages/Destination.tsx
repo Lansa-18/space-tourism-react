@@ -5,6 +5,8 @@ import PageText from '../components/PageText'
 
 export default function Destination() {
   const [destinations, setDestinations] = useState([]);  
+  console.log(destinations);
+  
 
   useEffect(function () {
     async function fetchDestinations() {
