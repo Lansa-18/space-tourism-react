@@ -8,7 +8,8 @@ export default {
         "blue-900": "#0B0D17",
         "blue-300": "#D0D6F9",
         white: "#fff",
-        "nav-bg-color": "rgba(255, 255, 255, 0.05",
+        "opaque-white": "rgba(255,255,255,0.25)",
+        "nav-bg-color": "rgba(255,255,255,0.05",
       },
       // FONTS
       fontFamily: {
@@ -16,6 +17,19 @@ export default {
         "barlow-condensed": ["Barlow Condensed", "sans-serif"],
         bellefair: ["Bellefair", "serif"],
       },
+
+      // SPACING
+      spacing: {
+        "spacing-25": ".2rem",
+        "spacing-150": "1.2rem",
+        "spacing-200": "1.6rem",
+        "spacing-300": "2.4rem",
+        "spacing-400": "3.2rem",
+        "spacing-500": "4rem",
+        "spacing-600": "4.8rem",
+        "spacing-800": "6.4rem",
+      },
+      
 
       // MEDIA QUERY
       screens: {

@@ -1,8 +1,14 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import Navbar from "../components/Navbar";
 import PageText from "../components/PageText";
+import DestinationDetails, { DestinationArr } from "../components/DestinationDetails";
 
-const initialState = {
+interface State {
+  destination: DestinationArr[],
+  displayDestination: number
+}
+
+const initialState: State = {
   destination: [],
   displayDestination: 0,
 };
@@ -15,6 +21,12 @@ function reducer(state, action) {
         destination: action.payload,
       };
 
+    case "destination/switch":
+      return {
+        ...state,
+        displayDestination: action.payload
+      }
+
     default:
       throw new Error(
         "There was an error encountered when working with the reducer in the destination page"
@@ -23,10 +35,11 @@ function reducer(state, action) {
 }
 
 export default function Destination() {
-  // const [destinations, setDestinations] = useState([]);
-  // console.log(destinations);
+  const [{ destination, displayDestination }, dispatch] = useReducer(reducer, initialState);
 
-  const [{ destination }, dispatch] = useReducer(reducer, initialState);
+  function dispatchDestinationSwitch(destinationIndex: number) {
+    dispatch({type: "destination/switch", payload: destinationIndex});
+  }
 
   useEffect(function () {
     async function fetchDestinations() {
@@ -37,15 +50,12 @@ export default function Destination() {
 
     fetchDestinations();
   }, []);
-  console.log(destination);
-  
-  // CREATE A COMPONENT CALLED DestinationDetails , first thing to be done tomorrow.
-  
 
   return (
-    <div className="destination-bg-desktop h-screen w-full">
+    <div className="destination-bg-desktop min-h-screen min-w-full">
       <Navbar />
       <PageText pageNumber={1} pageText="Pick your destination" />
+      <DestinationDetails destination={destination} displayDestination={displayDestination} dispatchDestinationSwitch={dispatchDestinationSwitch} />
     </div>
   );
 }
