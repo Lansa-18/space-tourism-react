@@ -1,13 +1,15 @@
+import { useDestination } from "../context/DestinationContext";
+
 type DestinationListProps = {
     dest: string,
-    dispatchDestinationSwitch: (destinationIndex: number) => void,
     index: number
 }
 
 
-export default function DestinationList({dest, dispatchDestinationSwitch, index}: DestinationListProps) {
+export default function DestinationList({dest, index}: DestinationListProps) {
+  const {switchDestination, displayDestination} = useDestination();
   return (
-    <li onClick={() => dispatchDestinationSwitch(index)} className="cursor-pointer">
+    <li onClick={() => switchDestination(index)} className={index === displayDestination ? 'active cursor-pointer pb-3': 'cursor-pointer pb-3'}>
         {dest}
     </li>
   )

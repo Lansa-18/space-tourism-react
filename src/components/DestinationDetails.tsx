@@ -1,4 +1,5 @@
 import DestinationList from "./DestinationList";
+import { useDestination } from "../context/DestinationContext";
 
 export interface DestinationArr {
     images: {png: string};
@@ -8,14 +9,15 @@ export interface DestinationArr {
     travel: string
   }
 
-type DestinationProps = {
-    destination: DestinationArr[],
-    displayDestination: number
-    dispatchDestinationSwitch: (destinationIndex: number) => void
-}
+// type DestinationProps = {
+//     destination: DestinationArr[],
+//     displayDestination: number
+//     dispatchDestinationSwitch: (destinationIndex: number) => void
+// }
 
 
-export default function DestinationDetails({destination, displayDestination, dispatchDestinationSwitch}: DestinationProps) {
+export default function DestinationDetails() {
+    const {destination, displayDestination} = useDestination();
     const selectedDestination = destination[displayDestination];
     const listOfDestinations = destination.map((dest => dest.name));
     
@@ -26,7 +28,7 @@ export default function DestinationDetails({destination, displayDestination, dis
         </div>
         <div className='flex flex-col gap-spacing-300 basis-[90%] py-[7rem] px-[5rem]'>
             <ul className='flex gap-spacing-400 font-barlow-condensed text-[1.6rem] tracking-[2px] uppercase text-blue-300'>
-                {listOfDestinations.map((dest, index) => <DestinationList key={dest} index={index} dispatchDestinationSwitch={dispatchDestinationSwitch} dest={dest} />)}
+                {listOfDestinations.map((dest, index) => <DestinationList key={dest} index={index} dest={dest} />)}
             </ul>
             <article className='border-b border-opaque-white flex flex-col'>
                 <h3 className='font-bellefair text-[9.6rem] uppercase'>{selectedDestination?.name}</h3>
