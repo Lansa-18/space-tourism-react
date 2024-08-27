@@ -31,3 +31,7 @@ html {
 .active{
   border-bottom: 4px solid white;
 }
+
+.active-pagination-button{
+  opacity: 1;
+}

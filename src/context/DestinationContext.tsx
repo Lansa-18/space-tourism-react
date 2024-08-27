@@ -61,7 +61,7 @@ function DestinationProvider({
   children,
 }: DestinationProviderProps) {
   const [{destination, displayDestination}, dispatch] = useReducer(reducer, initialState);
-
+  
   function fetchDestinations(destinations: DestinationArr[]) {
     dispatch({ type: "destinations/fetching", payload: destinations });
   }
