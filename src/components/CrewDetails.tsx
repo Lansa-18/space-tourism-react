@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useCrew } from "../context/CrewContext";
 import CrewButtonList from "./CrewButtonList";
 
 export interface CrewMember {
@@ -8,54 +8,9 @@ export interface CrewMember {
   bio: string;
 }
 
-type State = {
-  crew: CrewMember[];
-  displayCrew: number;
-};
-
-const initialState: State = {
-  crew: [],
-  displayCrew: 0,
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "crew/fetching":
-      return {
-        ...state,
-        crew: action.payload,
-      };
-    case "crew/switching":
-      return {
-        ...state,
-        displayCrew: action.payload,
-      };
-  }
-}
-
 export default function CrewDetails() {
-  const [{ crew, displayCrew }, dispatch] = useReducer(reducer, initialState); // State to hold crew data
+  const { crew, displayCrew } = useCrew();
   const selectedCrew = crew[displayCrew];
-
-  useEffect(function () {
-    async function fetchCrew() {
-      try {
-        const res = await fetch("/data.json");
-        const data = await res.json();
-        dispatch({ type: "crew/fetching", payload: data.crew });
-      } catch (err) {
-        console.error(err);
-      }
-    }
-
-    fetchCrew();
-  }, []);
-
-  console.log(selectedCrew);
-
-  function crewSwitch(index: number) {
-    dispatch({ type: "crew/switching", payload: index });
-  }
 
   return (
     <main className="relative text-white flex w-[75%] mx-auto justify-between gap-spacing-400 items-center py-[1.5rem]">
@@ -72,11 +27,7 @@ export default function CrewDetails() {
           </p>
         </article>
         <div className="flex gap-spacing-500">
-          <CrewButtonList
-            crew={crew}
-            displayCrew={displayCrew}
-            crewSwitch={crewSwitch}
-          />
+          <CrewButtonList />
         </div>
       </div>
       <div className="w-[40%] ">
@@ -86,11 +37,6 @@ export default function CrewDetails() {
           alt="Douglas-image"
         />
       </div>
-
-      {/* Pagination buttons */}
-      {/* <div className='absolute flex gap-spacing-500'>
-            <CrewButtonList crew={crew} displayCrew={displayCrew} crewSwitch={crewSwitch}/>
-        </div> */}
     </main>
   );
 }

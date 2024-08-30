@@ -9,12 +9,6 @@ export interface DestinationArr {
     travel: string
   }
 
-// type DestinationProps = {
-//     destination: DestinationArr[],
-//     displayDestination: number
-//     dispatchDestinationSwitch: (destinationIndex: number) => void
-// }
-
 
 export default function DestinationDetails() {
     const {destination, displayDestination} = useDestination();

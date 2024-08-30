@@ -1,16 +1,7 @@
-import { CrewMember } from "./CrewDetails";
+import { useCrew } from "../context/CrewContext";
 
-type CrewButtonListProps = {
-  crew: CrewMember[];
-  displayCrew: number;
-  crewSwitch: (index: number) => void;
-};
-
-export default function CrewButtonList({
-  crew,
-  displayCrew,
-  crewSwitch,
-}: CrewButtonListProps) {
+export default function CrewButtonList() {
+  const { crew, displayCrew, crewSwitch } = useCrew();
   return crew.map((_, index) => (
     <button
       onClick={() => crewSwitch(index)}
@@ -22,11 +13,4 @@ export default function CrewButtonList({
       }
     ></button>
   ));
-}
-
-{
-  /* <button className="bg-white opacity-[0.174363] active-pagination-button h-[2rem] w-[2rem] rounded-full"></button>
-<button className="bg-white opacity-[0.174363] h-[2rem] w-[2rem] rounded-full"></button>
-<button className="bg-white opacity-[0.174363] h-[2rem] w-[2rem] rounded-full"></button>
-<button className="bg-white opacity-[0.174363] h-[2rem] w-[2rem] rounded-full"></button> */
 }

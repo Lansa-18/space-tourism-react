@@ -28,6 +28,7 @@ export default {
         "spacing-500": "4rem",
         "spacing-600": "4.8rem",
         "spacing-800": "6.4rem",
+        "spacing-1000": "8rem",
       },
       
 

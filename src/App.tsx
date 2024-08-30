@@ -6,19 +6,22 @@ import Crew from "./pages/Crew";
 import Destination from "./pages/Destination";
 import Technology from "./pages/Technology";
 import { DestinationProvider } from "./context/DestinationContext";
+import { CrewProvider } from "./context/CrewContext";
 
 function App() {
   return (
     <DestinationProvider>
-      <BrowserRouter>
-        <Routes>
-          {/* Routes go here */}
-          <Route index element={<Homepage />} />
-          <Route path="destination" element={<Destination />} />
-          <Route path="crew" element={<Crew />} />
-          <Route path="technology" element={<Technology />} />
-        </Routes>
-      </BrowserRouter>
+      <CrewProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* Routes go here */}
+            <Route index element={<Homepage />} />
+            <Route path="destination" element={<Destination />} />
+            <Route path="crew" element={<Crew />} />
+            <Route path="technology" element={<Technology />} />
+          </Routes>
+        </BrowserRouter>
+      </CrewProvider>
     </DestinationProvider>
   );
 }
