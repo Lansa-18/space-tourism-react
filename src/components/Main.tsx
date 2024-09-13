@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Main() {
   return (
     <main>
-      <section className="text-white uppercase flex justify-between items-center w-[70%] mx-auto mt-[10rem]">
+      <section className="text-white uppercase flex justify-between items-center w-[70%] mx-auto mt-[7rem]">
         <div className="flex flex-col gap-[2.4rem] basis-[50%]">
           <p className="text-blue-300 text-[2.8rem] tracking-[.4rem] font-barlow-condensed">
             So, you want to travel to

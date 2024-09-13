@@ -1,25 +1,29 @@
-// import { BrowserRouter } from "react-router-dom"
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import Crew from "./pages/Crew";
-import Destination from "./pages/Destination";
-import Technology from "./pages/Technology";
 import { DestinationProvider } from "./context/DestinationContext";
 import { CrewProvider } from "./context/CrewContext";
+import { lazy, Suspense } from "react";
+import Spinner from "./components/Spinner";
+
+// LAZY LOADING THE PAGES
+const HomePage = lazy(() => import("./pages/Homepage"));
+const Destination = lazy(() => import("./pages/Destination"));
+const Crew = lazy(() => import("./pages/Crew"));
+const Technology = lazy(() => import("./pages/Technology"));
 
 function App() {
   return (
     <DestinationProvider>
       <CrewProvider>
         <BrowserRouter>
-          <Routes>
-            {/* Routes go here */}
-            <Route index element={<Homepage />} />
-            <Route path="destination" element={<Destination />} />
-            <Route path="crew" element={<Crew />} />
-            <Route path="technology" element={<Technology />} />
-          </Routes>
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+              {/* Routes go here */}
+              <Route index element={<HomePage />} />
+              <Route path="destination" element={<Destination />} />
+              <Route path="crew" element={<Crew />} />
+              <Route path="technology" element={<Technology />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </CrewProvider>
     </DestinationProvider>

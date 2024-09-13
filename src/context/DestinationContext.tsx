@@ -16,6 +16,11 @@ interface switchDestinationAction {
   payload: number;
 }
 
+const initialState: State = {
+  destination: [],
+  displayDestination: 0,
+};
+
 type Action = fetchDestinationAction | switchDestinationAction;
 
 interface ContextProps {
@@ -24,11 +29,6 @@ interface ContextProps {
   fetchDestinations: (destination: DestinationArr[]) => void;
   switchDestination: (destinationIndex: number) => void;
 }
-
-const initialState: State = {
-  destination: [],
-  displayDestination: 0,
-};
 
 const DestinationContext = createContext<ContextProps | undefined>(undefined);
 
@@ -57,15 +57,16 @@ interface DestinationProviderProps {
   children: React.ReactNode;
 }
 
-function DestinationProvider({
-  children,
-}: DestinationProviderProps) {
-  const [{destination, displayDestination}, dispatch] = useReducer(reducer, initialState);
-  
+function DestinationProvider({ children }: DestinationProviderProps) {
+  const [{ destination, displayDestination }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
+
   function fetchDestinations(destinations: DestinationArr[]) {
     dispatch({ type: "destinations/fetching", payload: destinations });
   }
-  
+
   function switchDestination(destinationIndex: number) {
     dispatch({ type: "destinations/switch", payload: destinationIndex });
   }
@@ -73,8 +74,8 @@ function DestinationProvider({
   useEffect(function () {
     async function fetchDestinations() {
       const res = await fetch("/data.json");
-      const data = await res.json();      
-      dispatch({type: "destinations/fetching", payload: data.destinations});
+      const data = await res.json();
+      dispatch({ type: "destinations/fetching", payload: data.destinations });
     }
 
     fetchDestinations();
@@ -82,7 +83,12 @@ function DestinationProvider({
 
   return (
     <DestinationContext.Provider
-      value={{ destination, displayDestination, fetchDestinations, switchDestination }}
+      value={{
+        destination,
+        displayDestination,
+        fetchDestinations,
+        switchDestination,
+      }}
     >
       {children}
     </DestinationContext.Provider>
@@ -92,10 +98,11 @@ function DestinationProvider({
 function useDestination() {
   const context = useContext(DestinationContext);
   if (context === undefined) {
-    throw new Error("DestinationContext cannot be used outside of DestinationProvider");
+    throw new Error(
+      "DestinationContext cannot be used outside of DestinationProvider"
+    );
   }
   return context;
 }
 
-
-export {DestinationProvider, useDestination};
+export { DestinationProvider, useDestination };
