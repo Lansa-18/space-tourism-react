@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,30 +8,38 @@ html {
 }
 
 .home-bg-desktop {
-  background-image: url('/assets/home/background-home-desktop.jpg');
+  background-image: url("/assets/home/background-home-desktop.jpg");
   background-size: cover;
   background-position: center;
 }
 .destination-bg-desktop {
-  background-image: url('/assets/destination/background-destination-desktop.jpg');
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
   background-size: cover;
   background-position: center;
 }
 .crew-bg-desktop {
-  background-image: url('/assets/crew/background-crew-desktop.jpg');
+  background-image: url("/assets/crew/background-crew-desktop.jpg");
   background-size: cover;
   background-position: center;
 }
 .technology-bg-desktop {
-  background-image: url('/assets/technology/background-technology-desktop.jpg');
+  background-image: url("/assets/technology/background-technology-desktop.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.active{
+.active {
   border-bottom: 4px solid white;
 }
 
-.active-pagination-button{
+.active-pagination-button {
   opacity: 1;
+}
+
+/* CUSTOM MEDIA QUERY */
+@media screen and (max-width: 992px) {
+  .home-bg-desktop {
+    background-image: url("/assets/home/background-home-tablet.jpg");
+    background-size: cover;
+  }
 }
