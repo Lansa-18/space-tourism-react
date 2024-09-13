@@ -25,6 +25,7 @@ export default {
         white: "#fff",
         "opaque-white": "rgba(255,255,255,0.25)",
         "nav-bg-color": "rgba(255,255,255,0.05",
+        "nav-bg-color-tablet": "#191a27",
       },
       // FONTS
       fontFamily: {
