@@ -11,8 +11,8 @@ export default function NavOverlay({
 }: NavOverlayProps) {
   if (!activeHamburger) return null;
   return (
-    <article className="hidden custom-850:flex flex-col gap-spacing-600 min-h-[200vh] border border-red-900 absolute top-0 right-0 backdrop-blur-[4rem] z-50 w-[75%]">
-      <div className="ml-auto my-[4rem] pr-[4rem]" onClick={() => setActiveHamburger(false)}>
+    <article className="hidden custom-850:flex flex-col gap-spacing-600 min-h-[200vh] absolute top-0 right-0 backdrop-blur-[4rem] z-50 w-[75%]">
+      <div className="ml-auto my-[4rem] pr-[4rem]" onClick={() => setActiveHamburger(activeHamburger)}>
         <img
           className="w-[3rem] h-[3rem]"
           src="/assets/shared/icon-close.svg"
@@ -35,7 +35,7 @@ export default function NavOverlay({
         <li className="">
           <NavLink
             className="flex gap-spacing-150 tracking-[2px] text-[1.6rem]"
-            to="/"
+            to="/destination"
           >
             <strong className="">
               01
@@ -46,7 +46,7 @@ export default function NavOverlay({
         <li className="">
           <NavLink
             className="flex gap-spacing-150 tracking-[2px] text-[1.6rem]"
-            to="/"
+            to="/crew"
           >
             <strong className="">
               02
@@ -57,7 +57,7 @@ export default function NavOverlay({
         <li className="">
           <NavLink
             className="flex gap-spacing-150 tracking-[2px] text-[1.6rem]"
-            to="/"
+            to="/technology"
           >
             <strong className="">
               03

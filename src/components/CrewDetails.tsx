@@ -13,7 +13,7 @@ export default function CrewDetails() {
   const selectedCrew = crew[displayCrew];
 
   return (
-    <main className="relative text-white flex w-[75%] mx-auto justify-between gap-spacing-400 items-center py-[1.5rem]">
+    <main className="relative text-white flex w-[75%] mx-auto justify-between gap-spacing-400 items-center py-[1.5rem] tab-port:flex-col">
       <div className="flex flex-col gap-spacing-600 basis-[49%]">
         <article className="flex flex-col">
           <h3 className="font-bellefair text-[3.2rem] uppercase text-white opacity-[0.5042]">

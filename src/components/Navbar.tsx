@@ -1,9 +1,15 @@
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
+import { useState } from "react";
+import NavOverlay from "./NavOverlay";
 
-// type NavbarProps = {
+export default function Navbar() {
+  const [activeHamburger, setActiveHamburger] = useState(false);
 
-export default function Navbar({ setActiveHamburger }) {
+  function handleSetHamburger() {
+    setActiveHamburger((prev) => !prev);
+  }
+
   return (
     <>
       <nav className="custom-850:px-[4rem] flex items-center justify-between -z-10">
@@ -58,7 +64,7 @@ export default function Navbar({ setActiveHamburger }) {
         </ul>
 
         {/* MOBILE NAVIGATION */}
-        <div className="hidden custom-850:block" onClick={setActiveHamburger}>
+        <div className="hidden custom-850:block" onClick={handleSetHamburger}>
           <img
             className="block"
             src="/assets/shared/icon-hamburger.svg"
@@ -66,6 +72,13 @@ export default function Navbar({ setActiveHamburger }) {
           />
         </div>
       </nav>
+
+      {activeHamburger && (
+        <NavOverlay
+          activeHamburger={activeHamburger}
+          setActiveHamburger={handleSetHamburger}
+        />
+      )}
 
     </>
   );
