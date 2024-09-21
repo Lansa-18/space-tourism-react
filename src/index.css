@@ -49,4 +49,9 @@ html {
     background-image: url("/assets/home/background-home-mobile.jpg");
     background-size: cover;
   }
+
+  .active{
+    border-right: 4px solid white;
+    border-bottom: none;
+  }
 }
