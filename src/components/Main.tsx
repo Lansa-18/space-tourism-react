@@ -35,9 +35,9 @@ export default function Main() {
       </article>
 
       {/* TABLET AND MOBILE SCREENS */}
-      <article>
+      <article className="hidden tab-land:block">
         <Link to="/destination">
-          <div className="bg-white rounded-full p-[2rem] w-[35rem] h-[35rem] text-center flex justify-center items-center text-blue-900 text-[4rem] font-normal font-bellefair">
+          <div className="bg-white rounded-full p-[2rem] w-[30rem] h-[30rem] text-center flex justify-center items-center text-blue-900 text-[4rem] font-normal font-bellefair">
             EXPLORE
           </div>
         </Link>
