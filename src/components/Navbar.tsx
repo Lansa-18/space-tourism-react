@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="custom-850:px-[4rem] flex items-center justify-between -z-10">
+      <nav className="custom-850:px-[4rem] flex items-center justify-between -z-10 custom-850:pt-[4rem]">
         <Logo />
 
         {/* DESKTOP NAVIGATION */}

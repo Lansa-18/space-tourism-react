@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 export default function Homepage() {
   return (
-    <div className="home-bg-desktop min-h-[200vh] w-full custom-850:pt-[4rem]">
+    <div className="home-bg-desktop min-h-[200vh] w-full">
       <Navbar />
       <Main />
     </div>
