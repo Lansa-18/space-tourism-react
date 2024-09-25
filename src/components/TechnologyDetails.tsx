@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useTechnology } from "../context/TechnologyContext";
 import TechnologyButtonList from "./TechnologyButtonList";
 
 type Technology = {
@@ -12,62 +12,9 @@ type Technology = {
 
 export type TechnologyArr = Technology[];
 
-type State = {
-  technology: TechnologyArr;
-  displayTechnology: number;
-}
-
-const initialState: State = {
-  technology: [],
-  displayTechnology: 0,
-};
-
-type Action =
-  | {type: "technology/fetching"; payload: TechnologyArr}
-  | {type: "technology/switch"; payload: number}
-
-function reducer(state: State, action: Action) {
-  switch (action.type) {
-    case "technology/fetching":
-      return {
-        ...state,
-        technology: action.payload,
-      };
-
-    case "technology/switch":
-      return {
-        ...state,
-        displayTechnology: action.payload,
-      };
-
-    default:
-      throw new Error(
-        "There was an error encountered when working with the reducer in the destination page"
-      );
-  }
-}
-
 export default function TechnologyDetails() {
-  const [{ technology, displayTechnology }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const { technology, switchTechnology, displayTechnology } = useTechnology();
   const selectedTechnology = technology[displayTechnology];
-
-  useEffect(function () {
-    async function fetchTechnology() {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-      dispatch({ type: "technology/fetching", payload: data.technology });
-    }
-    fetchTechnology();
-  }, []);
-
-  function switchTechnology(technologyIndex: number) {
-    dispatch({ type: "technology/switch", payload: technologyIndex });
-  }
-
-  console.log(technology);
 
   return (
     <>

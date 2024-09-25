@@ -12,9 +12,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="custom-850:px-[4rem] flex items-center justify-between -z-10 custom-850:pt-[4rem]">
+      <nav className="custom-850:px-[4rem] flex items-center justify-between custom-850:py-[2rem]">
         <Logo />
-
+          {/* bg-nav-bg-color */}
         {/* DESKTOP NAVIGATION */}
         <ul className="text-white flex bg-nav-bg-color backdrop-blur-[4rem] gap-[4.8rem] py-0 px-[6.4rem] tab-port:bg-nav-bg-color-tablet tab-port:basis-[60%] tab-land:px-[3.4rem] custom-850:hidden">
           <li className="">

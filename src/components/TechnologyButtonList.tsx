@@ -11,21 +11,17 @@ export default function TechnologyButtonList({
   displayTechnology,
   switchTechnology,
 }: TechnologyButtonListProps) {
-  console.log(technology);
-
   return technology.map((_, index) => (
     <button
       onClick={() => switchTechnology(index)}
       key={index}
-      className={
-        index === displayTechnology
-          ? "bg-white h-[6.5rem] w-[6.5rem] rounded-full cursor-pointer"
-          : "border border-opaque-white text-white h-[6.5rem] w-[6.5rem] rounded-full cursor-pointer"
-      }
+      className={`h-[6.5rem] w-[6.5rem] rounded-full cursor-pointer border border-opaque-white hover:border-white ease-in-out duration-300 ${
+        index === displayTechnology ? "bg-white text-black" : "text-white"
+      }`}
     >
-        {index + 1}
+      {index + 1}
     </button>
   ));
 }
 
-<button className=" bg-white rounded-full">1</button>
+<button className=" bg-white rounded-full">1</button>;

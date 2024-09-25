@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 export default function Homepage() {
   return (
-    <div className="home-bg-desktop min-h-[150vh] w-full">
+    <div className="home-bg-desktop mask-image h-screen w-full relative">
       <Navbar />
       <Main />
     </div>
