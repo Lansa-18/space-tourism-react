@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Main() {
   return (
-    <main className="left-1/2 -translate-x-1/2 absolute text-white uppercase w-[70%] flex justify-between items-center mt-[7rem] tab-port:flex-col tab-port:gap-[4rem] tab-port:py-[2rem]">
+    <main className="left-1/2 -translate-x-1/2 absolute text-white uppercase w-[70%] flex justify-between items-center mt-[7rem] tab-port:flex-col tab-port:gap-[4rem] tab-port:py-[2rem] tab-port:mt-0">
       <div className="flex flex-col gap-[2.2rem] basis-[50%] tab-port:text-center tab-port:gap-[1.5rem]">
         <p className="text-blue-300 text-[2.8rem] tab-land:text-[2.4rem] tracking-[.4rem] tab-land:tracking-[.2rem] font-barlow-condensed">
           So, you want to travel to
