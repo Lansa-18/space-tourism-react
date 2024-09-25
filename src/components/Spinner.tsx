@@ -1,7 +1,7 @@
 
 export default function Spinner() {
   return (
-    <div className="min-h-screen flex flex-col bg-blue-900 border shadow-sm rounded-xl">
+    <div className="min-h-screen flex flex-col bg-blue-900 shadow-sm rounded-xl">
       <div className="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
         <div className="flex justify-center">
           <div

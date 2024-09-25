@@ -11,7 +11,7 @@ export default function NavOverlay({
 }: NavOverlayProps) {
   if (!activeHamburger) return null;
   return (
-    <article className="hidden custom-850:flex flex-col gap-spacing-600 h-screen absolute top-0 right-0 backdrop-blur-[4rem] z-50 w-[75%]">
+    <article className="hidden custom-850:flex flex-col gap-spacing-600 min-h-screen absolute inset-y-0 right-0 backdrop-blur-[4rem] z-50 w-[75%]">
       <div className="ml-auto my-[4rem] pr-[4rem]" onClick={() => setActiveHamburger(activeHamburger)}>
         <img
           className="w-[3rem] h-[3rem]"
